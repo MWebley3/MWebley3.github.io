@@ -452,20 +452,5 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-				document.getElementById('contactForm').addEventListener('submit', function(event) {
-					var name = document.getElementById('name').value.trim();
-					var email = document.getElementById('email').value.trim();
-					var phone = document.getElementById('phone').value.trim();
-					var subject = document.getElementById('subject').value.trim();
-					var message = document.getElementById('message').value.trim();
-					if (!name || !email || !phone || !subject || !message) {
-						alert('Please fill out all required fields.');
-						event.preventDefault();
-					} else {
-						// Form is valid, can submit
-					}
-				});
-			</script>
 	</body>
 </html>
