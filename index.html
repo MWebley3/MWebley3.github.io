@@ -86,7 +86,7 @@
 									<div class="row gtr-uniform gtr-50">
 										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" required /></div>
 										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" required /></div>
-										<div class="col-6 col-12-xsmall"><input type="text" name="phone" id="phone" placeholder="Phone (123-456-7890)" required/></div>
+										<div class="col-6 col-12-xsmall"><input type="text" name="phone" id="phone" placeholder="Phone (213-587-9143)" required/></div>
 										<div class="col-6 col-12-xsmall"><input type="text" name="subject" id="subject" placeholder="Subject"required /></div>
 										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4" required></textarea></div>
 									</div>
@@ -452,21 +452,20 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>document.getElementById('contactForm').addEventListener('submit', function(event) {
-				var formValid = true;
-				var formFields = this.elements;
-				for (var i = 0; i < formFields.length; i++) {
-					if (formFields[i].tagName === 'INPUT' || formFields[i].tagName === 'TEXTAREA') {
-						if (formFields[i].hasAttribute('required') && !formFields[i].value.trim()) {
-							formValid = false;
-							break;
-						}
+			<script>
+				document.getElementById('contactForm').addEventListener('submit', function(event) {
+					var name = document.getElementById('name').value.trim();
+					var email = document.getElementById('email').value.trim();
+					var phone = document.getElementById('phone').value.trim();
+					var subject = document.getElementById('subject').value.trim();
+					var message = document.getElementById('message').value.trim();
+					if (!name || !email || !phone || !subject || !message) {
+						alert('Please fill out all required fields.');
+						event.preventDefault();
+					} else {
+						// Form is valid, can submit
 					}
-				}
-				if (!formValid) {
-					alert('Please fill out all required fields.');
-					event.preventDefault();
-				}
-			});</script>
+				});
+			</script>
 	</body>
 </html>
