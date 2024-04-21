@@ -1826,6 +1826,7 @@ input, select, textarea {
 		padding: 0 0.75em;
 		text-decoration: none;
 		width: 100%;
+		resize: none;
 	}
 
 		input[type="text"]:invalid,
